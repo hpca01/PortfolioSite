@@ -19,3 +19,20 @@ a.link-card:hover{
 	color:inherit;
 	text-decoration: none;	
 }
+
+#main_container{
+	padding-top: 4rem;
+}
+
+#page_title{
+	font-size: 4rem;
+}
+
+.top_buffer{
+	margin-top: 1rem;
+}
+
+/* #resize_img{
+	max-width: 70%;
+  	height: auto;
+} */

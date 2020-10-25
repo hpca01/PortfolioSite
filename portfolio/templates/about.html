@@ -1,6 +1,39 @@
 {% extends 'main.html' %}
-{% load static %}
 {% block main_content %}
-
+{% load static %}
+<div id="main_container" class="container-fluid bg-light">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <p id="page_title">About Me</p>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center top_buffer">
+        <div class="col-sm-5">
+            <img id="resize_img" src="{% static 'portfolio/pics/computer_image_aboutme.jpg' %}" alt="picture of a computer with python" class="img-thumbnail img-responsive">
+        </div>
+        <div class="col-sm-5 text-center">
+            <h4>Hi I'm Hiren, a Software Engineer from Lathrop, California.</h4>
+            {% comment %} <p class="text-center">Hi, I'm Hiren a Software Engineer from Lathrop, California.</p> {% endcomment %}
+        </div>
+    </div>
+    <div class="row justify-content-center top_buffer">
+        <div class="col-sm-10">    
+            <p class="text-sm-left">
+                Josh had spent year and year accumulating the information. He knew it inside out and if there was ever anyone looking for an expert in the field, Josh would be the one to call. The problem was that there was nobody interested in the information besides him and he knew it. Years of information painstakingly memorized and sorted with not a sole giving even an ounce of interest in the topic.
+            </p>
+            <p class="text-sm-left">
+                It was a rat's nest. Not a literal one, but that is what her hair seemed to resemble every morning when she got up. It was going to take at least an hour to get it under control and she was sick and tired of it. She peered into the mirror and wondered if it was worth it. It wasn't. She opened the drawer and picked up the hair clippers.
+            </p>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center top_buffer">
+        <div class="col-sm-5 text-center">    
+            
+        </div>
+        <div class="col-sm-5">    
+            
+        </div>
+    </div>
+</div>
 
 {% endblock main_content %}
