@@ -1,0 +1,21 @@
+#fa-icon{
+    font-size:30px;
+}
+header{
+	display: block;
+	padding-bottom: 50px;
+}
+.jumbotron{
+	padding: 5rem 2rem !important;
+	margin-bottom: 0;
+}
+
+.album{
+	padding-top: 5rem !important;
+}
+
+a.link-card,
+a.link-card:hover{
+	color:inherit;
+	text-decoration: none;	
+}

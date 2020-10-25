@@ -1,0 +1,55 @@
+{% extends 'main.html' %}
+{% block main_content %}
+{% load static %}
+<main role="main">
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Hi, I'm Hiren!</h1>
+          <p class="lead text-muted">A software engineer, on the ever long quest for more knowledge.<p>
+          </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-4">
+                <a class="link-card" href="{% url 'about_me' %}">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{% static 'portfolio/pics/car_universe_bg.jpg' %}" alt="About Me">
+                    <div class="card-body">
+                    <h5 class="card-title">About Me</h5>
+                    <p class="card-text">A little bit about me, my background in CS, as well as outside of it.</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="link-card" href="#">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{% static 'portfolio/pics/computer_python_image.jpg' %}" alt="My Projects">
+                    <div class="card-body">
+                    <h5 class="card-title">Projects</h5>
+                    <p class="card-text">Some of my past and current CS projects, source code linked(where possible).</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a class="link-card" href="{% url 'my_hobbies' %}">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{% static 'portfolio/pics/cooking_image_stock_1.jpg' %}" alt="My Hobbies">
+                    <div class="card-body">
+                    <h5 class="card-title">Hobbies</h5>
+                    <p class="card-text">Hobbies outside of CS, such as cooking, teaching my dog to stay, etc.</p>
+                    </div>
+                </div>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+</main>
+{% endblock main_content %}
