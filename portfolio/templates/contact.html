@@ -1,6 +1,25 @@
 {% extends 'main.html' %}
-{% load static %}
 {% block main_content %}
-
+{% load static %}
+<div id="main_container" class="container-fluid bg-light extended_bottom">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <p id="page_title">Contact Me</p>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center top_buffer">
+        <div class="col-sm-5 text-center top_buffer">
+        <a class="link-card" href="mailto:hirenpatelca@gmail.com" data-toggle="tooltip" title="Send email to me">
+            <i id="fa-icon-large" class="fa fa-envelope-o fa-5x" aria-hidden="true"></i>
+        </a>
+        </div>
+        
+        <div class="col-sm-5 text-center top_buffer">
+        <a class="link-card" href="#" data-toggle="tooltip" title="Follow me on LinkedIn">
+            <i id="fa-icon-large"  class="fa fa-linkedin fa-5x" aria-hidden="true"></i>
+        </a>
+        </div>
+    </div>
+</div>
 
 {% endblock main_content %}

@@ -1,6 +1,11 @@
 #fa-icon{
     font-size:30px;
 }
+
+#fa-icon-large{
+	font-size: 6rem;
+}
+
 header{
 	display: block;
 	padding-bottom: 50px;
@@ -31,7 +36,9 @@ a.link-card:hover{
 .top_buffer{
 	margin-top: 1rem;
 }
-
+.extended_bottom{
+	padding-bottom: 2rem;
+}
 /* #resize_img{
 	max-width: 70%;
   	height: auto;
