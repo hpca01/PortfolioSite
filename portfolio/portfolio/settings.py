@@ -123,3 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [Path.joinpath(BASE_DIR, "static", "portfolio")]
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, "static")
+
+MEDIA_URL='/MEDIA/'
+
+MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media')

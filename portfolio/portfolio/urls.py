@@ -21,12 +21,13 @@ from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home, name="home"),
-    path('contact/', contact, name="contact_link"),
-    path('about/', about, name="about_me"),
-    path('hobbies/', hobbies, name="my_hobbies"),
-] 
+    path("admin/", admin.site.urls),
+    path("", home, name="home"),
+    path("contact/", contact, name="contact_link"),
+    path("about/", about, name="about_me"),
+    path("hobbies/", hobbies, name="my_hobbies"),
+    path("projects/", ProjectListView.as_view(), name="projects"),
+]
 
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns()

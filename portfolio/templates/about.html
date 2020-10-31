@@ -1,39 +1,162 @@
-{% extends 'main.html' %}
-{% block main_content %}
-{% load static %}
+{% extends 'main.html' %} {% block main_content %} {% load static %}
 <div id="main_container" class="container-fluid bg-light extended_bottom">
-    <div class="row justify-content-center">
-        <div class="col text-center">
-            <p id="page_title">About Me</p>
-        </div>
+  <div class="row justify-content-center">
+    <div class="col text-center">
+      <p id="page_title">About Me</p>
     </div>
-    <div class="row justify-content-center align-items-center top_buffer">
-        <div class="col-sm-5">
-            <img id="resize_img" src="{% static 'portfolio/pics/computer_image_aboutme.jpg' %}" alt="picture of a computer with python" class="img-thumbnail img-responsive">
-        </div>
-        <div class="col-sm-5 text-center">
-            <h4>Hi I'm Hiren, a Software Engineer from Lathrop, California.</h4>
-            {% comment %} <p class="text-center">Hi, I'm Hiren a Software Engineer from Lathrop, California.</p> {% endcomment %}
-        </div>
+  </div>
+  <div class="row justify-content-center align-items-center top_buffer">
+    <div class="col-sm-6">
+      <img
+        id="resize_img"
+        src="{% static 'portfolio/pics/computer_image_aboutme.jpg' %}"
+        alt="picture of a computer with python"
+        class="img-thumbnail img-responsive"
+      />
     </div>
-    <div class="row justify-content-center top_buffer">
-        <div class="col-sm-10">    
-            <p class="text-sm-left">
-                Josh had spent year and year accumulating the information. He knew it inside out and if there was ever anyone looking for an expert in the field, Josh would be the one to call. The problem was that there was nobody interested in the information besides him and he knew it. Years of information painstakingly memorized and sorted with not a sole giving even an ounce of interest in the topic.
-            </p>
-            <p class="text-sm-left">
-                It was a rat's nest. Not a literal one, but that is what her hair seemed to resemble every morning when she got up. It was going to take at least an hour to get it under control and she was sick and tired of it. She peered into the mirror and wondered if it was worth it. It wasn't. She opened the drawer and picked up the hair clippers.
-            </p>
-        </div>
+    <div class="col-sm-4 text-center">
+      <h3>Hi I'm Hiren, a Software Engineer from Lathrop, California.</h3>
+      {% comment %}
+      <p class="text-center">
+        Hi, I'm Hiren a Software Engineer from Lathrop, California.
+      </p>
+      {% endcomment %}
     </div>
-    <div class="row justify-content-center align-items-center top_buffer">
-        <div class="col-sm-5 text-center">    
-            
-        </div>
-        <div class="col-sm-5">    
-            
-        </div>
+  </div>
+  <div class="row justify-content-center top_buffer">
+    <div class="col-sm-10">
+      <p class="text-sm-left lead">
+        Over the past few years I've went from being hobby dev to becoming a
+        full fledged software engineer. Some of the projects that I've completed
+        in my past range from school assignments, personal projects, hackathon,
+        or work related projects.
+      </p>
+      <p class="text-sm-left lead">
+        Most of my work is largely written in Java, Python and Rust(recently). I
+        have made web-applications, mobile applications, stand-alone desktop
+        applications, CLI applications, custom ETL jobs, and log parsers.
+        Currently, I am pursuing a master's degree now at Georgia Institute of
+        Technology with a specialization in Computing Systems.
+      </p>
     </div>
+  </div>
+  <div class="row justify-content-center align-items-center top_buffer">
+    <div class="col-sm-5 text-center">
+      <p class="text-sm-left lead font-weight-bold">
+        From a hobby dev to software engineer...
+      </p>
+      <p class="text-sm-left">
+        My introduction to programming came when I was pursing a degree in
+        Clinical Nutrition at San Jose State University. I had registered for a
+        C Programming class in order meet my unit requirements for the semester.
+        It was not easy transition to make as a bio major trying to understand
+        the fundamentals of computing. Oddly enough, I thrived on the challenge
+        and ended passing with an A+. This was motivation for me to take another
+        class in Java programming at SJSU which I subsequently passed with an A
+        as well. All the meanwhile I continued along the path to complete my
+        degree in Clinical Nutrition.
+      </p>
+    </div>
+    <div class="col-sm-5">
+      <img
+        id="resize_img"
+        src="{% static 'portfolio/pics/microscop_image_stock.jpg' %}"
+        alt="picture of a microscope"
+        class="img-thumbnail img-responsive"
+      />
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center top_buffer">
+    <div class="col-sm-5 text-center">
+      <img
+        id="resize_img"
+        src="{% static 'portfolio/pics/surgery_room.jpg' %}"
+        alt="picture of a surgery room"
+        class="img-thumbnail img-responsive"
+      />
+    </div>
+    <div class="col-sm-5 text-center">
+      <p class="text-sm-left">
+        While going to school, I also worked as an Inpatient Pharmacy Technician
+        to fund college. Over the years, I noticed several problems which
+        usually caused delays down the chain. Some of these problems include
+        finding optimal medication levels in our automated dispensing machines.
+        Others included logistics of tracking narcotics through the life cycle
+        of a surgery case by reconciling documentation from multiple systems.
+        Some of my initial Python code was an effort to solve the aforementioned
+        problems through the PANDAS and Requests libraries. I was able to reduce
+        the time spent on the reconciling narcotics in surgery cases by creating
+        a script to combine data from the health-records and the dispensing
+        machines. This was able to cut down a 2 week full-time job to a 2 day
+        full-time job saving hours and increasing accuracy.
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center top_buffer">
+    <div class="col-sm-5 text-center">
+      <p class="text-sm-left">
+        This was the precursor to a hobby which would eventually lead me to
+        change my degree path. There was also a shift in thinking, whereas
+        people saw issues, I saw optimizations waiting to happen. This was also
+        when I accepted a job offer to work as a Lead IT Support Analyst, which
+        was drastically different from working in a hospital setting. Towards my
+        last year at SJSU I had decided to pursue a Bachelor's of Software
+        Development at Western Governors University. The change was sudden, but
+        I had felt that it would serve to challenge me intellectually. At this
+        point in time, I had also went through a Grow With Google scholarship
+        which introduced me to Android Development and had me making Android
+        applications.
+      </p>
+    </div>
+    <div class="col-sm-5 text-center">
+      <img
+        id="resize_img"
+        src="{% static 'portfolio/pics/computer_image_html.jpg' %}"
+        alt="picture of a surgery room"
+        class="img-thumbnail img-responsive"
+      />
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center top_buffer">
+    <div class="col-sm-10 text-center">
+      <p class="text-sm-left">
+        While going to school and working full time, I was able to develop many
+        more pieces of code that helped solve problems in an enterprise setting.
+        I even got a chance to compete in a hackathon trying to develop Voice-UI
+        for Alexa based applications that fit multiple user stories.
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center large-top-buffer">
+    <div class="col-sm-10 text-center large_top_buffer">
+      <p class="text-sm-left lead">
+        I finished my Software Development degree in April, 2020 and am
+        currently pursing a Master's Degree in Computer Science with a
+        specialization in Computing Systems at Georgia Institute of Technology.
+      </p>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center top_buffer">
+    <div class="col-sm-3">
+      <a
+        href="https://drive.google.com/file/d/1KgAH1-GFvo6RTr7HeLQYesIFKzRdIJGB/view"
+        class="btn btn-primary btn-block"
+        role="button"
+        >Resume</a
+      >
+    </div>
+    <div class="col-sm-3">
+      <button class="btn btn-primary btn-block">Portfolio</button>
+    </div>
+    <div class="col-sm-3">
+      <a
+        href="{% url 'contact_link' %}"
+        class="btn btn-primary btn-block"
+        role="button"
+        >Contact</a
+      >
+    </div>
+  </div>
 </div>
 
 {% endblock main_content %}

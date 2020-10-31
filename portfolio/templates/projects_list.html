@@ -1,0 +1,110 @@
+{% extends 'main.html' %} {% block main_content %} {% load static %}
+<div id="main_container" class="container-fluid bg-light extended_bottom">
+  <div class="row justify-content-center">
+    <div class="col text-center">
+      <p id="page_title">Projects</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-sm-6">
+      {% for project in projects %} {% if forloop.counter0|divisibleby:2 %}
+      <a class="link-card" href="#">
+        <div class="card box-shadow mt-2">
+          <div class="row no-gutters">
+            <div class="col-sm-7">
+              <!--add an if statement which moves this and the other column back and forth based on index-->
+              <img
+                class="card-img"
+                src="{% static 'portfolio/pics/car_universe_bg.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div class="col-sm-5">
+              <div class="card-body">
+                <h5 class="card-title text-right">{{project.name}}</h5>
+                <p class="card-text text-right">{{project.quick_blurb}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      {% else %}
+      <a class="link-card" href="#">
+        <div class="card box-shadow mt-2">
+          <div class="row no-gutters">
+            <div class="col-sm-5">
+              <div class="card-body">
+                <h5 class="card-title text-right">{{project.name}}</h5>
+                <p class="card-text text-right">{{project.quick_blurb}}</p>
+              </div>
+            </div>
+            <div class="col-sm-7">
+              <!--add an if statement which moves this and the other column back and forth based on index-->
+              <img
+                class="card-img"
+                src="{% static 'portfolio/pics/car_universe_bg.jpg' %}"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </a>
+      {% endif %} {% endfor %}
+      <a class="link-card" href="#">
+        <div class="card box-shadow mt-2">
+          <div class="row no-gutters">
+            <div class="col-sm-7">
+              <!--add an if statement which moves this and the other column back and forth based on index-->
+              <img
+                class="card-img"
+                src="{% static 'portfolio/pics/car_universe_bg.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div class="col-sm-5">
+              <div class="card-body">
+                <h5 class="card-title text-right">Special title treatment</h5>
+                <p class="card-text text-right">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      <div class="card box-shadow mt-2">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card box-shadow mt-2">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+      <div class="card box-shadow mt-2">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">
+            With supporting text below as a natural lead-in to additional
+            content.
+          </p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock main_content %}
