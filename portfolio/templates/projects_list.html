@@ -6,16 +6,16 @@
     </div>
   </div>
   <div class="row justify-content-center">
-    <div class="col-sm-6">
+    <div class="col-sm-5">
       {% for project in projects %} {% if forloop.counter0|divisibleby:2 %}
       <a class="link-card" href="#">
-        <div class="card box-shadow mt-2">
-          <div class="row no-gutters">
+        <div class="card box-shadow mt-3">
+          <div class="row">
             <div class="col-sm-7">
               <!--add an if statement which moves this and the other column back and forth based on index-->
               <img
-                class="card-img"
-                src="{% static 'portfolio/pics/car_universe_bg.jpg' %}"
+                class="card-img card-img-horizontal-size"
+                src="{{ project.main_img.url }}"
                 alt=""
               />
             </div>
@@ -30,7 +30,7 @@
       </a>
       {% else %}
       <a class="link-card" href="#">
-        <div class="card box-shadow mt-2">
+        <div class="card box-shadow mt-3">
           <div class="row no-gutters">
             <div class="col-sm-5">
               <div class="card-body">
@@ -41,68 +41,15 @@
             <div class="col-sm-7">
               <!--add an if statement which moves this and the other column back and forth based on index-->
               <img
-                class="card-img"
-                src="{% static 'portfolio/pics/car_universe_bg.jpg' %}"
-                alt=""
+                class="card-img card-img-horizontal-size"
+                src="{{ project.main_img.url }}"
+                alt="project image"
               />
             </div>
           </div>
         </div>
       </a>
       {% endif %} {% endfor %}
-      <a class="link-card" href="#">
-        <div class="card box-shadow mt-2">
-          <div class="row no-gutters">
-            <div class="col-sm-7">
-              <!--add an if statement which moves this and the other column back and forth based on index-->
-              <img
-                class="card-img"
-                src="{% static 'portfolio/pics/car_universe_bg.jpg' %}"
-                alt=""
-              />
-            </div>
-            <div class="col-sm-5">
-              <div class="card-body">
-                <h5 class="card-title text-right">Special title treatment</h5>
-                <p class="card-text text-right">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-      <div class="card box-shadow mt-2">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card box-shadow mt-2">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-      <div class="card box-shadow mt-2">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
     </div>
   </div>
 </div>

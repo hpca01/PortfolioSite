@@ -15,6 +15,7 @@ class ResumeProject(models.Model):
     git_link = models.CharField(("Git Link"), max_length=200)
     main_img = models.ImageField(("Image Upload"), upload_to="resume")
     difficulty = models.IntegerField(("Difficulty"), default=0)
+    tools_used = models.ManyToManyField("resume.ToolsUsed", verbose_name=("Tools Used"))
 
     class Meta:
         verbose_name = "ResumeProject"
@@ -38,7 +39,7 @@ class ResumeProjectDetail(models.Model):
         verbose_name_plural = "ResumeProjectDetails"
 
     def __str__(self):
-        return self.name
+        return "{} - {}".format(self.associated_project.name, self.detail_short)
 
     def get_absolute_url(self):
         return reverse("ResumeProjectDetail_detail", kwargs={"pk": self.pk})
@@ -46,4 +47,7 @@ class ResumeProjectDetail(models.Model):
 
 class ToolsUsed(models.Model):
     tool_name = models.CharField(("Tool Name"), max_length=50)
-    tool_icon_css = models.CharField(("Tool Icon CSS"), max_length=50)
+    tool_color = models.CharField(("Tool Color"), max_length=50)
+
+    def __str__(self):
+        return self.tool_name

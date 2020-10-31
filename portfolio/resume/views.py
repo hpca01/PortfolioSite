@@ -22,7 +22,7 @@ def hobbies(request):
 
 class ProjectListView(ListView):
     model = ResumeProject
-    context_object_name = "project"
+    context_object_name = "projects"
     template_name = "projects_list.html"
 
     def get_queryset(self):
