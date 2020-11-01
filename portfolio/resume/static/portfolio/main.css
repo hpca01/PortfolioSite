@@ -25,12 +25,20 @@ a.link-card:hover {
   text-decoration: none;
 }
 
-#main_container {
-  padding-top: 4rem;
-}
-
 #page_title {
   font-size: 4rem;
+}
+
+.title_block {
+  background-color: #e9ecef;
+  padding: 4rem;
+  margin-bottom: 2rem;
+}
+.project-title-block {
+  background-color: #e9ecef;
+  font-size: 3rem !important;
+  padding: 4rem;
+  margin-bottom: 2rem;
 }
 
 .top_buffer {
@@ -47,6 +55,17 @@ a.link-card:hover {
   width: 100%;
   height: 15vw;
   object-fit: fill;
+}
+
+.badge-font-big {
+  font-size: 1.5em;
+}
+
+.fa-icon-bigger {
+  font-size: 5rem;
+}
+.fa-grey {
+  color: gray;
 }
 
 /* #resize_img {

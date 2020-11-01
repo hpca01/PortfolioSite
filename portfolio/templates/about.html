@@ -1,6 +1,6 @@
 {% extends 'main.html' %} {% block main_content %} {% load static %}
-<div id="main_container" class="container-fluid bg-light extended_bottom">
-  <div class="row justify-content-center">
+<div class="container-fluid bg-light extended_bottom">
+  <div class="row justify-content-center title_block">
     <div class="col text-center">
       <p id="page_title">About Me</p>
     </div>
@@ -146,7 +146,12 @@
       >
     </div>
     <div class="col-sm-3">
-      <button class="btn btn-primary btn-block">Portfolio</button>
+      <a
+        href="{% url 'projects' %}"
+        class="btn btn-primary btn-block"
+        role="button"
+        >Portfolio</a
+      >
     </div>
     <div class="col-sm-3">
       <a

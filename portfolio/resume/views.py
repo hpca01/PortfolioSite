@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import ResumeProject, ResumeProjectDetail
 
@@ -27,3 +27,16 @@ class ProjectListView(ListView):
 
     def get_queryset(self):
         return ResumeProject.objects.all().order_by("-difficulty", "start_date")
+
+
+class ProjectDetailView(DetailView):
+    model = ResumeProject
+    context_object_name = "project"
+    template_name = "project_detail.html"
+
+    def get_queryset(self):
+        return (
+            ResumeProject.objects.filter(pk=self.kwargs["pk"])
+            .select_related()
+            .prefetch_related()
+        )

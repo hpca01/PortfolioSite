@@ -27,6 +27,7 @@ urlpatterns = [
     path("about/", about, name="about_me"),
     path("hobbies/", hobbies, name="my_hobbies"),
     path("projects/", ProjectListView.as_view(), name="projects"),
+    path("project/<pk>/", ProjectDetailView.as_view(), name="project"),
 ]
 
 if settings.DEBUG:
