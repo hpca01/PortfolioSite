@@ -1,7 +1,74 @@
-#fa-icon{
-    font-size:30px;
+#fa-icon {
+  font-size: 30px;
 }
-header{
-	display: block;
-	padding-bottom: 50px;
+
+#fa-icon-large {
+  font-size: 6rem;
 }
+
+header {
+  display: block;
+  padding-bottom: 50px;
+}
+.jumbotron {
+  padding: 5rem 2rem !important;
+  margin-bottom: 0;
+}
+
+.album {
+  padding-top: 5rem !important;
+}
+
+a.link-card,
+a.link-card:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+#page_title {
+  font-size: 4rem;
+}
+
+.title_block {
+  background-color: #e9ecef;
+  padding: 4rem;
+  margin-bottom: 2rem;
+}
+.project-title-block {
+  background-color: #e9ecef;
+  font-size: 3rem !important;
+  padding: 4rem;
+  margin-bottom: 2rem;
+}
+
+.top_buffer {
+  margin-top: 1rem;
+}
+.large-top-buffer {
+  margin-top: 3rem;
+}
+.extended_bottom {
+  padding-bottom: 3rem;
+}
+
+.card-img-horizontal-size {
+  width: 100%;
+  height: 15vw;
+  object-fit: fill;
+}
+
+.badge-font-big {
+  font-size: 1.5em;
+}
+
+.fa-icon-bigger {
+  font-size: 5rem;
+}
+.fa-grey {
+  color: gray;
+}
+
+/* #resize_img {
+  max-width: 70%;
+  height: auto;
+} */
