@@ -13,7 +13,7 @@ class ResumeProject(models.Model):
     )
     long_description = models.TextField(("Long Description"), blank=True)
     git_link = models.CharField(("Git Link"), max_length=200)
-    main_img = models.ImageField(("Image Upload"), upload_to="resume")
+    main_img = models.ImageField(("Image Upload"), upload_to="resume/")
     difficulty = models.IntegerField(("Difficulty"), default=0)
     tools_used = models.ManyToManyField("resume.ToolsUsed", verbose_name=("Tools Used"))
 
