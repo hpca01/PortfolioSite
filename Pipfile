@@ -10,6 +10,7 @@ python-dotenv = "*"
 django-extensions = "*"
 psycopg2 = "*"
 gunicorn = "*"
+dj-database-url = "*"
 
 [dev-packages]
 mypy = "*"
