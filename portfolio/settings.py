@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import dj_database_url
 import django_heroku
+import cloudinary
 
 # from .secrets import *
 import os
@@ -161,4 +162,8 @@ options = DATABASES["default"].get("OPTIONS", {})
 
 options.pop("sslmode", None)  # type: ignore
 
-CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
+cloudinary.config(
+    cloud_name=os.getenv("CLOUDINARY_NAME"),
+    api_key=os.getenv("CLOUDINARY_KEY"),
+    api_secret=os.getenv("CLOUDINARY_SECRET"),
+)
