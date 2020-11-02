@@ -160,3 +160,5 @@ django_heroku.settings(locals())  # This is new
 options = DATABASES["default"].get("OPTIONS", {})
 
 options.pop("sslmode", None)  # type: ignore
+
+CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
