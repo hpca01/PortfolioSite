@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
+import django_heroku
 
 # from .secrets import *
 import os
@@ -32,7 +34,13 @@ DEBUG = os.getenv("DEBUG", False)  # type: ignore
 
 SECRET_KEY = os.getenv("SECRET_KEY")  # type: ignore
 
-ALLOWED_HOSTS = ["*"]  # TODO: to be amended
+ALLOWED_HOSTS = [
+    "0.0.0.0",
+    "hpca01portfolio.herokuapp.com",
+    "127.0.0.1",
+    "hpca01.info",
+    "localhost",
+]  # TODO: to be amended
 
 
 # Application definition
@@ -50,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -90,15 +99,8 @@ sqlite = {
 if os.getenv("SQL", None) is None:
     DATABASES = {"default": sqlite}
 else:
-    DATABASES = {
-        "default": {
-            "ENGINE": os.getenv("DB_ENGINE"),
-            "NAME": os.getenv("DB_NAME"),
-            "USER": os.getenv("DB_USER"),
-            "PASSWORD": os.getenv("DB_PASS"),
-            "HOST": os.getenv("HOST_NAME"),
-        }
-    }
+    DATABASES = {}
+    DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
@@ -137,12 +139,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 STATIC_URL = "/static/"
 
-STATICFILES_DIRS = [Path.joinpath(BASE_DIR, "static", "portfolio")]
+# STATICFILES_DIRS = [Path.joinpath(BASE_DIR, "static", "portfolio")]
 
 STATIC_ROOT = Path.joinpath(BASE_DIR, "static")
 
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = Path.joinpath(BASE_DIR, "media")
+
+# This should already be in your settings.py
+django_heroku.settings(locals())  # This is new
+
+options = DATABASES["default"].get("OPTIONS", {})
+
+options.pop("sslmode", None)  # type: ignore
