@@ -51,9 +51,11 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "cloudinary_storage",
     "django.contrib.staticfiles",
     "django_extensions",
     "resume",
+    "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -140,6 +142,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+CLOUDINARY_STORAGE = {
+    "CLOUD_NAME": "hzjlg6kbk",
+    "API_KEY": "981153832442787",
+    "API_SECRET": "iap-ya5cr2PGjYfdnSmhg7hjmI4",
+}
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
+
 
 STATIC_URL = "/static/"
 
