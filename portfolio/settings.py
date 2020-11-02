@@ -150,6 +150,7 @@ STATIC_URL = "/static/"
 STATIC_ROOT = Path.joinpath(BASE_DIR, "static")
 
 MEDIA_URL = "/media/"
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 MEDIA_ROOT = Path.joinpath(BASE_DIR, "media")
 
