@@ -30,7 +30,9 @@
     <div class="col-sm-4">
       <p class="lead">Tools Used:</p>
       {% for tool in project.tools_used.all %}
-      <span class="badge badge-primary badge-font-big mt-2"
+      <span
+        class="badge badge-primary badge-font-big mt-2"
+        style="color:{{tool.tool_color}} !important;"
         >{{tool.tool_name}}</span
       >
       {% endfor %}
