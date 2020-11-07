@@ -27,7 +27,7 @@
   </div>
   {% endfor %}
   <div class="row justify-content-center">
-    <div class="col-sm-4">
+    <div class="col-sm-4 text-center">
       <p class="lead">Tools Used:</p>
       {% for tool in project.tools_used.all %}
       <span
@@ -37,10 +37,10 @@
       >
       {% endfor %}
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-4 text-center">
       {% if project.git_link %}
       <p class="lead">Links:</p>
-      <a href="{{project.git_link}}" class="btn btn-light mt-2">Github</a>
+      <a href="{{project.git_link}}" class="btn btn-secondary mt-2">Github</a>
       {% endif %} {% for link in project.relatedlinks_set.all %}
       <a class="btn btn-primary mt-2" href="{{link.link_url}}" role="button"
         >{{link.link_name}}</a
