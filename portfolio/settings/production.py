@@ -22,12 +22,12 @@ STATIC_URL = "/static/"
 
 # STATICFILES_DIRS = [Path.joinpath(BASE_DIR, "static", "portfolio")]
 
-STATIC_ROOT = Path.joinpath(BASE_DIR, "static")
+STATIC_ROOT = Path.joinpath(BASE_DIR.parent, "static")
 
 MEDIA_URL = "/media/"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
-MEDIA_ROOT = Path.joinpath(BASE_DIR, "media")
+MEDIA_ROOT = Path.joinpath(BASE_DIR.parent, "media")
 
 
 # This should already be in your settings.py
