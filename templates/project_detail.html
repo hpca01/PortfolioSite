@@ -38,12 +38,12 @@
       {% endfor %}
     </div>
     <div class="col-sm-4">
-      <a class="nav-link" href="{{project.git_link}}"
-        ><i
-          class="fa fa-github-square fa-6 fa-icon-bigger fa-grey"
-          aria-hidden="true"
-        ></i
-      ></a>
+      <p class="lead">Links:</p>
+      {% for link in project.relatedlinks_set.all %}
+      <a class="btn btn-primary mt-2" href="{{link.link_url}}" role="button"
+        >{{link.link_name}}</a
+      >
+      {% endfor %}
     </div>
   </div>
 </div>
