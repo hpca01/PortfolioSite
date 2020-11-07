@@ -13,7 +13,7 @@ class ResumeProject(models.Model):
         ("Quick Blurb"), max_length=200, null=False, blank=False
     )
     long_description = models.TextField(("Long Description"), blank=True)
-    git_link = models.CharField(("Git Link"), max_length=200)
+    git_link = models.CharField(("Git Link"), max_length=200, blank=True)
     # main_img = models.ImageField(("Image Upload"), upload_to="resume/")
     main_img = CloudinaryField("Image Upload")
     difficulty = models.IntegerField(("Difficulty"), default=0)
@@ -53,3 +53,18 @@ class ToolsUsed(models.Model):
 
     def __str__(self):
         return self.tool_name
+
+
+class RelatedLinks(models.Model):
+    related_project = models.ForeignKey(
+        "resume.ResumeProject", on_delete=models.CASCADE
+    )
+    link_name = models.CharField(("Link Name"), max_length=50)
+    link_url = models.CharField(("Link"), max_length=250)
+
+    def __str__(self):
+        pass
+
+    class Meta:
+        verbose_name = "RelatedLinks"
+        verbose_name_plural = "RelatedLinkss"
