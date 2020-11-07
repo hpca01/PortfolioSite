@@ -11,7 +11,7 @@
       <a class="link-card" href="{% url 'project' project.id %}">
         <div class="card box-shadow mt-3">
           <div class="row">
-            <div class="col-sm-7">
+            <div class="col-sm-7 d-none d-lg-block">
               <!--add an if statement which moves this and the other column back and forth based on index-->
               <img
                 class="card-img card-img-horizontal-size"
@@ -38,7 +38,7 @@
                 <p class="card-text text-right">{{project.quick_blurb}}</p>
               </div>
             </div>
-            <div class="col-sm-7">
+            <div class="col-sm-7 d-none d-lg-block">
               <!--add an if statement which moves this and the other column back and forth based on index-->
               <img
                 class="card-img card-img-horizontal-size"

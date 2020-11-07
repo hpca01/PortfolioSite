@@ -17,43 +17,7 @@
   </div>
   <div class="row justify-content-center mt-5">
     <div class="col-sm-8 text-center">
-      <p class="text-sm-left">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam enim
-        nunc, sodales eu pellentesque nec, placerat ut neque. Vivamus mi justo,
-        scelerisque nec lorem auctor, egestas porttitor mi. Nulla ut lorem
-        metus. Quisque lobortis sem vitae luctus porta. Cras fringilla sed purus
-        sit amet luctus. Ut convallis ex tellus, id ultricies sem auctor quis.
-        Morbi placerat risus leo, sit amet molestie sem consequat quis. Cras
-        bibendum justo risus, vel rhoncus arcu condimentum quis. Morbi sit amet
-        leo purus. Vestibulum accumsan, felis at mollis pellentesque, purus
-        augue pellentesque augue, dictum accumsan eros sem quis est. Mauris ut
-        aliquet augue, laoreet porta dui. Proin nisl arcu, egestas in odio et,
-        vestibulum porttitor mauris. Nulla est ligula, dignissim a rutrum et,
-        lobortis id erat. Phasellus ornare, magna ac vestibulum dapibus, odio
-        magna dapibus neque, vel bibendum ipsum orci in quam. Etiam pharetra
-        cursus velit, dictum fermentum tortor tristique vitae. Aenean pretium
-        aliquam quam, non rutrum nisi ultricies vitae. Vivamus accumsan semper
-        odio sed consequat. Nullam consectetur cursus sem, tincidunt rutrum
-        ligula scelerisque in. Quisque eget tortor eget turpis fermentum
-        faucibus id eget ante. Phasellus et orci et sem aliquam consequat vitae
-        at nibh. Morbi tempor sapien at lacus tincidunt hendrerit. Sed
-        scelerisque lectus non ligula scelerisque mollis. Cras nec purus at
-        lorem commodo rutrum sed nec odio. Nunc vitae purus ut justo vestibulum
-        vulputate. Sed a justo id magna placerat sollicitudin. Fusce sapien
-        augue, sagittis a pretium eget, pharetra at diam. Nullam quis enim
-        pretium, posuere lacus vitae, lacinia justo. Praesent ex diam, tincidunt
-        eu scelerisque non, tincidunt vitae tortor. Curabitur venenatis magna
-        leo, at fermentum mi pharetra sed. Sed quam leo, ultricies a tellus vel,
-        vehicula aliquam elit. Donec non felis a elit aliquet fringilla et nec
-        tortor. Etiam eros tellus, posuere vel nisi in, congue maximus nunc.
-        Proin malesuada dolor non est condimentum ullamcorper. Quisque ut orci
-        sed elit mollis tempor et ut arcu. Morbi sodales sagittis elit sed
-        tempus. Nam bibendum purus eget euismod lacinia. Pellentesque vitae elit
-        sed sapien dictum vehicula finibus ut magna. Donec aliquet odio quam, ac
-        maximus ante auctor eget. Quisque pharetra commodo orci vitae pretium.
-        Vivamus fermentum tempor finibus. Integer dapibus orci vel risus pretium
-        vulputate.
-      </p>
+      <p class="text-sm-left">{{project.long_description}}</p>
     </div>
   </div>
   {% for detail in project.resumeprojectdetail_set.all %}
@@ -66,7 +30,9 @@
     <div class="col-sm-4">
       <p class="lead">Tools Used:</p>
       {% for tool in project.tools_used.all %}
-      <span class="badge badge-primary badge-font-big">{{tool.tool_name}}</span>
+      <span class="badge badge-primary badge-font-big mt-2"
+        >{{tool.tool_name}}</span
+      >
       {% endfor %}
     </div>
     <div class="col-sm-4">
