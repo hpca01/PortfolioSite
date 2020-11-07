@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False
+DEBUG = os.environ.get("DEBUG", False)
 
 DATABASES = {}
 DATABASES["default"] = dj_database_url.config(conn_max_age=600)
@@ -50,7 +50,7 @@ LOGGING = {
 }
 
 # This should already be in your settings.py
-django_heroku.settings(locals())  # This is new
+django_heroku.settings(locals(), logging=False)  # This is new
 
 options = DATABASES["default"].get("OPTIONS", {})
 
