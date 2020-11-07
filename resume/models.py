@@ -67,4 +67,4 @@ class RelatedLinks(models.Model):
 
     class Meta:
         verbose_name = "RelatedLinks"
-        verbose_name_plural = "RelatedLinkss"
+        verbose_name_plural = "RelatedLinks"
