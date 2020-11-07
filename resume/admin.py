@@ -61,7 +61,10 @@ class ToolsUsedAdmin(admin.ModelAdmin):
 
 @admin.register(ResumeProjectDetail)
 class ResumeProjectDetailAdmin(admin.ModelAdmin):
-    list_display = ("get_related_project",)
+    list_display = (
+        "get_related_project",
+        "detail_short",
+    )
 
     def get_related_project(self, obj: ResumeProjectDetail):
         return obj.associated_project.name

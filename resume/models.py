@@ -63,7 +63,7 @@ class RelatedLinks(models.Model):
     link_url = models.CharField(("Link"), max_length=250)
 
     def __str__(self):
-        pass
+        return "{} - {}".format(self.related_project.name, self.link_name)
 
     class Meta:
         verbose_name = "RelatedLinks"
