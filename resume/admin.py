@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.forms.widgets import Textarea
+from django.db import models
 
 admin.site.site_header = "Portfolio Admin"
 
@@ -9,6 +11,7 @@ from .models import ResumeProject, ResumeProjectDetail, ToolsUsed, RelatedLinks
 class ResumeProjectDetailInline(admin.StackedInline):
     model = ResumeProjectDetail
     extra = 0
+    formfield_overrides = {models.CharField: {"widget": Textarea}}
 
 
 class ResumeProjectRelatedInline(admin.StackedInline):
@@ -28,6 +31,7 @@ class ResumeProjectAdmin(admin.ModelAdmin):
         "name",
         "difficulty",
     )
+    formfield_overrides = {models.CharField: {"widget": Textarea}}
 
 
 @admin.register(ToolsUsed)
