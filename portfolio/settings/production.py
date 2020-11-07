@@ -10,6 +10,10 @@ INSTALLED_APPS += [
     "django_extensions",
 ]
 
+SECURE_SSL_REDIRECT = True
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
 ALLOWED_HOSTS = [
     "hpca01portfolio.herokuapp.com",
     "hpca01.info",
