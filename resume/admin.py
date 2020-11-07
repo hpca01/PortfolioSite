@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.forms.widgets import Textarea
 from django.db import models
+from django import forms
 
 admin.site.site_header = "Portfolio Admin"
 
@@ -8,22 +9,38 @@ admin.site.site_header = "Portfolio Admin"
 from .models import ResumeProject, ResumeProjectDetail, ToolsUsed, RelatedLinks
 
 
+class ResumeProjectDetailInlineFrom(forms.ModelForm):
+    class Meta:
+        model = ResumeProjectDetail
+        widgets = {"explanation": forms.Textarea}
+        fields = "__all__"
+
+
 class ResumeProjectDetailInline(admin.StackedInline):
     model = ResumeProjectDetail
     extra = 0
-    formfield_overrides = {models.CharField: {"widget": Textarea}}
+    form = ResumeProjectDetailInlineFrom
 
 
-class ResumeProjectRelatedInline(admin.StackedInline):
+class ResumeProjectRelatedLinksInline(admin.StackedInline):
     model = RelatedLinks
     extra = 0
+
+
+class ResumeProjectForm(forms.ModelForm):
+    class Meta:
+        model = ResumeProject
+        widgets = {
+            "quick_blurb": forms.Textarea,
+        }
+        fields = "__all__"
 
 
 @admin.register(ResumeProject)
 class ResumeProjectAdmin(admin.ModelAdmin):
     inlines = (
         ResumeProjectDetailInline,
-        ResumeProjectRelatedInline,
+        ResumeProjectRelatedLinksInline,
     )
     list_display = (
         "start_date",
@@ -31,7 +48,7 @@ class ResumeProjectAdmin(admin.ModelAdmin):
         "name",
         "difficulty",
     )
-    formfield_overrides = {models.CharField: {"widget": Textarea}}
+    form = ResumeProjectForm
 
 
 @admin.register(ToolsUsed)
