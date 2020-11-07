@@ -17,6 +17,7 @@ django-cloudinary-storage = "*"
 
 [dev-packages]
 mypy = "*"
+ipython = "*"
 
 [requires]
 python_version = "3.8"

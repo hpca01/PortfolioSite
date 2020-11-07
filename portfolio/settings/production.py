@@ -8,6 +8,8 @@ DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 
 INSTALLED_APPS += [
     "django_extensions",
+    "cloudinary_storage",
+    "cloudinary",
 ]
 
 SECURE_SSL_REDIRECT = True
