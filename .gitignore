@@ -6,7 +6,7 @@
 *.log
 *.pot
 *.pyc
-*.cpython-*
+*.cpython
 __pycache__/
 */*/*/__pycache__/
 */*/__pycache__/

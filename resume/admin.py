@@ -1,7 +1,9 @@
 from django.contrib import admin
 
+admin.site.site_header = "Portfolio Admin"
+
 # Register your models here.
-from .models import ResumeProject, ResumeProjectDetail, ToolsUsed
+from .models import ResumeProject, ResumeProjectDetail, ToolsUsed, RelatedLinks
 
 
 class ResumeProjectDetailInline(admin.StackedInline):
@@ -9,9 +11,17 @@ class ResumeProjectDetailInline(admin.StackedInline):
     extra = 0
 
 
+class ResumeProjectRelatedInline(admin.StackedInline):
+    model = RelatedLinks
+    extra = 0
+
+
 @admin.register(ResumeProject)
 class ResumeProjectAdmin(admin.ModelAdmin):
-    inlines = (ResumeProjectDetailInline,)
+    inlines = (
+        ResumeProjectDetailInline,
+        ResumeProjectRelatedInline,
+    )
     list_display = (
         "start_date",
         "ongoing",
@@ -36,3 +46,11 @@ class ResumeProjectDetailAdmin(admin.ModelAdmin):
         return obj.associated_project.name
 
     get_related_project.short_description = "Project Name"  # type: ignore
+
+
+@admin.register(RelatedLinks)
+class RelatedLinksAdmin(admin.ModelAdmin):
+    list_display = (
+        "link_name",
+        "link_url",
+    )
