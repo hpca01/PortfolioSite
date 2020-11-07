@@ -21,12 +21,12 @@
     </div>
   </div>
   {% for detail in project.resumeprojectdetail_set.all %}
-  <div class="row justify-content-center extended_bottom">
+  <div class="row justify-content-center mt-2">
     <div class="col-sm-2 text-center">{{detail.detail_short}}</div>
     <div class="col-sm-6 text-left">{{detail.explanation}}</div>
   </div>
   {% endfor %}
-  <div class="row justify-content-center">
+  <div class="row justify-content-center mt-5">
     <div class="col-sm-4 text-center">
       <p class="lead">Tools Used:</p>
       {% for tool in project.tools_used.all %}
