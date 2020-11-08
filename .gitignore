@@ -159,3 +159,4 @@ dmypy.json
 *.lock
 .vscode/
 
+portfolio/settings.py
