@@ -33,12 +33,11 @@ DEBUG = os.getenv("DEBUG", False)  # type: ignore
 SECRET_KEY = os.getenv("SECRET_KEY")  # type: ignore
 
 ALLOWED_HOSTS = [
-    "0.0.0.0",
     "hpca01portfolio.herokuapp.com",
     "127.0.0.1",
     "hpca01.info",
     "localhost",
-]  # TODO: to be amended
+]
 
 
 # Application definition
@@ -97,6 +96,16 @@ sqlite = {
 
 if os.getenv("SQL", None) is None:
     DATABASES = {"default": sqlite}
+else:
+    DATABASES = {}
+    DATABASES["default"] = {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": os.getenv("POSTGRES_NAME"),
+        "USER": os.getenv("POSTGRES_USER"),
+        "PASSWORD": os.getenv("POSTGRES_PASS"),
+        "HOST": os.getenv("POSTGRES_HOST"),
+        "PORT": "",  # DEFAULT
+    }
 
 
 # Password validation

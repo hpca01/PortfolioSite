@@ -157,3 +157,5 @@ dmypy.json
 *.lock
 .vscode/
 /**/admin/
+
+secrets.py
