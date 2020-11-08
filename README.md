@@ -3,6 +3,8 @@
 
 Portfolio site to show off past, current, and future projects.
 
+**Note**: The hosted branch is the [heroku_branch](https://github.com/hpca01/PortfolioSite/tree/heroku_branch)
+
 Also helps establish myself as a software developer.
 
 ## Prerequisites
